@@ -7,7 +7,7 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.WriteLine("This is updating my code in my repo!");
+            Console.WriteLine("This is updating my in my repo!");
         }
     }
 }
