@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HelloWorld.Test;
+using System;
+using System.Collections.Generic;
 
 namespace HelloWorld
 {
@@ -6,8 +8,36 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("This is updating my in my repo!");
+            Person justin = new Person
+            {
+                Name = "Justin Tindle",
+                Height = 60
+            };
+
+            Person ross = new Person { Name = "Ross", Height = 62 };
+            Person jake = new Person { Name = "Jake", Height = 61 };
+
+            IList<Person> persons = new List<Person>();
+
+            persons.Add(justin);
+            persons.Add(ross);
+            persons.Add(jake);
+
+            foreach(Person people in persons)
+            {
+                if (people.Height > 61)
+                {
+                    people.TellYouMyName();
+                }
+                else if (people.Height == 61)
+                {
+                    Console.WriteLine($"{people.Name} is just right.");
+                }
+                else
+                {
+                    Console.WriteLine($"Poor {people.Name} is too Short.");
+                }
+            }
         }
     }
 }
